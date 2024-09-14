@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EQと感情分析による採用適性判断ツール</title>
+    <style>
+    </style>
+    <link rel="stylesheet" href="css/style0.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>EQと感情分析による採用適性判断ツール</h1>
+    <form id="candidateForm">
+        <h2>EQスコア（0-10）</h2>
+        <label for="selfAwareness">自己認識:</label>
+        <input type="number" id="selfAwareness" name="selfAwareness" min="0" max="10" required>
+
+        <label for="selfManagement">自己管理:</label>
+        <input type="number" id="selfManagement" name="selfManagement" min="0" max="10" required>
+
+        <label for="socialAwareness">社会的認識:</label>
+        <input type="number" id="socialAwareness" name="socialAwareness" min="0" max="10" required>
+
+        <label for="relationshipManagement">関係管理:</label>
+        <input type="number" id="relationshipManagement" name="relationshipManagement" min="0" max="10" required>
+
+        <h2>面接回答</h2>
+        <label for="interview1">回答1:</label>
+        <textarea id="interview1" name="interview1" rows="3" required></textarea>
+
+        <label for="interview2">回答2:</label>
+        <textarea id="interview2" name="interview2" rows="3" required></textarea>
+
+        <label for="interview3">回答3:</label>
+        <textarea id="interview3" name="interview3" rows="3" required></textarea>
+
+        <button type="submit">分析する</button>
+    </form>
+
+    <div id="result">
+        <h2>分析結果</h2>
+        <p id="prediction"></p>
+        <p id="probability"></p>
+        <h3>EQスコア</h3>
+        <div class="chart-container">
+            <canvas id="eqChart"></canvas>
+        </div>
+        <h3>感情分析</h3>
+        <div class="chart-container">
+            <canvas id="sentimentChart"></canvas>
+        </div>
+        <script src="js/script0.js"></script>
+    </div>
+</body>
+</html>
